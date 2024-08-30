@@ -1,0 +1,24 @@
+[package]
+name = "bwb-stake"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "bwb_stake"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = {version = "0.29.0", features = ["init-if-needed"]}
+ahash = "=0.8.6"
+hex = "0.4.3"
+anchor-spl = "0.29.0"
+solana-program = "=1.18.1"
+num = "0.4.2"
