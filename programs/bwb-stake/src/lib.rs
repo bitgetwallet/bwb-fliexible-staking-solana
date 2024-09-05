@@ -10,9 +10,10 @@ declare_id!("EuwAXFYeeJMAQZWWTBnqjGdKrh1UWzsnAno7epsLTz8U");
 #[program]
 pub mod bwb_stake {
     use super::*;
-    // TODO: 上线修改为86400
-    const ONE_DAY: u64 = 120; // test
-    // const ONE_DAY: u64 = 86400;
+
+    // test
+    // const ONE_DAY: u64 = 120; 
+    const ONE_DAY: u64 = 86400;
 
     pub fn initialize(
         ctx: Context<Initialize>, 
@@ -115,7 +116,9 @@ pub mod bwb_stake {
             .ok_or(ErrorCode::ArithmeticError)?, ErrorCode::DurationMustBeMultiDays
         );
 
-        require!(stake_cap > 0 && 336 > 0, ErrorCode::TwoCapsNeedGT0);
+        // test
+        // require!(stake_cap > 0 && 336 > 0, ErrorCode::TwoCapsNeedGT0);
+        require!(stake_cap > 0 && reward_cap > 0, ErrorCode::TwoCapsNeedGT0);
 
         let pool = &mut ctx.accounts.pool;
         let clock = Clock::get()?;
