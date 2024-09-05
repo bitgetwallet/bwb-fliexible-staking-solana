@@ -11,8 +11,6 @@ declare_id!("EuwAXFYeeJMAQZWWTBnqjGdKrh1UWzsnAno7epsLTz8U");
 pub mod bwb_stake {
     use super::*;
 
-    // test
-    // const ONE_DAY: u64 = 120; 
     const ONE_DAY: u64 = 86400;
 
     pub fn initialize(
@@ -116,8 +114,6 @@ pub mod bwb_stake {
             .ok_or(ErrorCode::ArithmeticError)?, ErrorCode::DurationMustBeMultiDays
         );
 
-        // test
-        // require!(stake_cap > 0 && 336 > 0, ErrorCode::TwoCapsNeedGT0);
         require!(stake_cap > 0 && reward_cap > 0, ErrorCode::TwoCapsNeedGT0);
 
         let pool = &mut ctx.accounts.pool;
