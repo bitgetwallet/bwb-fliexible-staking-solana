@@ -440,6 +440,7 @@ pub mod bwb_stake {
         // check order info
         let clock = Clock::get()?;
         let order = &mut ctx.accounts.order;
+        require!(!order.is_unstake, ErrorCode::OrderAlreadyUnstake);
         require!(order.staker == ctx.accounts.user.key(), ErrorCode::InvalidUser);
         require!(clock.unix_timestamp >= order.start_time, ErrorCode::NotStartClaimReward);
 
