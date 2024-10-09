@@ -1,4 +1,5 @@
-# bwb-fliexible-staking-solana
+# BWB Fliexible Staking
+
 ## About 
 BWB Staking is a newly launched decentralized BWB staking protocol that allows users to stake BWB and earn rewards. It offers flexible staking options, allowing users to unstake at any time based on their needs, providing more convenience and flexibility compared to fixed-term staking.
 
